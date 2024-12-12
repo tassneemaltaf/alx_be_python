@@ -1,5 +1,4 @@
-hours = 2
-second_per_hour = 3600
+hours= 2
+seconds = 3600 * hours
 
-total = hours * second_per_hour
-print("2 hour(s) is ", total, " seconds")
+print(hours, " hour(s) is ", seconds, " seconds")
