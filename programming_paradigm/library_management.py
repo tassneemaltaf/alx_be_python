@@ -4,6 +4,18 @@ class Book:
         self.author = author
         self._is_checked_out = False
 
+    def check_out_book(self):
+        if self._is_checked_out == False:
+            self._is_checked_out = True
+        else:
+            pass
+
+    def return_book(self):
+        if self.is_checked_out ==  True:
+            self.is_checked_out = False
+        else:
+            pass
+
     def __str__(self):
         return f"'{self.title}' by {self.author}"
 
