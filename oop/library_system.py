@@ -1,20 +1,34 @@
-import math
+class Book:
+    def __init__(self, title: str, author: str):
+        self.title = title
+        self.author = author
 
-class Shape:
-    def area(self):
-        raise NotImplementedError
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
 
-class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
+class EBook(Book):
+    def __init__(self, title, author, file_size):
+        super().__init__(title, author)
+        self.file_size = file_size
 
-    def area(self):
-        return length * width
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}"
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
+class PrintBook(Book):
+    def __init__(self, title, author, page_count):
+        super().__init__(title, author)
+        self.page_count = page_count
 
-    def area(self):
-        return math.pi * (radius ^ 2)
+    def __str__(self):
+        return f"Printbook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def list_books(self):
+        for book in self.books:
+            print(book)
